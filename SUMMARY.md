@@ -1,7 +1,6 @@
 # Summary
 
-## * 前言
-* [Introduction](README.md)
+* [前言](README.md)
 * [DEMO 示例](DEMO/README.md)
     * [1 - 语音通知DEMO](DEMO/1-call.md)
     * [2 - 语音回拨DEMO](DEMO/2-callback.md)
