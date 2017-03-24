@@ -1,12 +1,18 @@
-# 消息DEMO 示例
+# 发送短信示例
 
 <!-- toc -->
 
 第三方开发者，在使用消息发送接口时，需要先创建模板，之后再发送。
 
-## 模板接口DEMO
+## 新增模板
 
-新增模板
+模板可以通过控制台手工添加，也可以通过API调用添加，模板只有经过审核通过才可以使用。
+
+系统默认拥有供测试使用
+
+模板编号：10001
+
+模板内容：【壹耘】您的手机验证码为：#*#，请在#*#内进行验证。
 
 ```java
 	private static final String url = "";//接口API
@@ -21,12 +27,12 @@
         MessageSapiSdk messageSapiSdk = new MessageSapiSdk(url,certId,secretKey);
         String name = "验证模板";//名称
         String type = "msg_sms";//msg_sms表示短信类型
-        String content = "【壹耘】您的验证码是：#*#";//模板内容
+        String content = "【XX信通】您的验证码是：#*#";//模板内容
         String remark = "备注使用场景";//备注使用场景
         try {
             String result = messageSapiSdk.addTemplate(appId,name,type,content,remark);
             System.out.println("接口返回数据："+result);
-            //接口返回数据：{"code":"000000","msg":"请求成功","data":{"name":"验证模板","type":"msg_sms","tempId":"10001","content":"【壹耘】您的验证码是：#*#","status":0,"remark":"备注使用场景"}}
+            //接口返回数据：{"code":"000000","msg":"请求成功","data":{"name":"验证模板","type":"msg_sms","tempId":"10001","content":"【XX信通】您的验证码是：#*#","status":0,"remark":"备注使用场景"}}
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -39,7 +45,7 @@
 
 消息接口包含，单发接口，群发接口，查询发送记录接口。
 
-例子1：给用户188xxxxxxxx发送模板编号为10001（模板内容：【壹耘】您的验证码是：#*#）,验证码为：123456
+例子1：给用户188xxxxxxxx发送模板编号为10001（模板内容：【XX信通】您的验证码是：#*#）,验证码为：123456
 
 ```java
  	private static final String url = "";//接口API
