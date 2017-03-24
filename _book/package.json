@@ -1,0 +1,24 @@
+{
+  "name": "oneyun-demo-java",
+  "version": "1.0.0",
+  "description": "壹耘 Java 示例程序",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/gitbook build",
+    "serve": "node_modules/.bin/gitbook serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liushuixingyun/oneyun-develop-quickstart.git"
+  },
+  "author": "liuxy@oneyun.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/liushuixingyun/oneyun-develop-quickstart/issues"
+  },
+  "homepage": "https://github.com/liushuixingyun/oneyun-develop-quickstart#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}

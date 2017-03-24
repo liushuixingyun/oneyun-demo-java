@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2 - 语音回拨DEMO · 壹耘 Java 示例程序</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="ONEYUN Team">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+
+    
+    <link rel="next" href="3-verify.html" />
+    
+    
+    <link rel="prev" href="1-call.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="gb-page-wrapper">
+    <header class="gb-page-header">
+        <div class="container">
+        
+<!--<a href="https://github.com/GitbookIO/gitbook/blob/master/docs/DEMO/2-callback.md" target="_blank" class="btn btn-link pull-right hidden-xs">-->
+	<!--<i class="octicon octicon-mark-github"></i> Edit on GitHub-->
+<!--</a>-->
+<!--<a href="../faq.md" class="btn btn-link pull-right hidden-xs">-->
+<!--F.A.Q-->
+<!--</a>-->
+<!--<a href="https://github.com/GitbookIO/gitbook/blob/master/CHANGES.md" target="_blank" class="btn btn-link pull-right hidden-xs">-->
+	<!--1.0.0-->
+<!--</a>-->
+
+        </div>
+    </header>
+
+    <div class="gb-page-body">
+        <div class="gb-page-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        
+
+
+
+    
+    <div class="panel panel-default">
+        
+
+        <div class="list-group">
+            
+    
+        
+        <a href="../" class="list-group-item ">
+        
+
+            
+
+            
+
+            Introduction
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="./" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            JAVA DEMO 示例
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="1-call.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            1 - 语音通知DEMO
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="2-callback.html" class="list-group-item active">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            2 - 语音回拨DEMO
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="3-verify.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            3 - 语音验证码DEMO
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="4-msg.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            4 - 短信DEMO
+
+        
+        </a>
+        
+
+        
+    
+
+        
+    
+
+        </div>
+    </div>
+    
+
+
+
+                    </div>
+                    <div class="col-md-9">
+                        
+                            
+<i style="font-size: 18px;" class="octicon octicon-book"></i>
+<a href="/develop/list" target="_parent">开发者中心</a> >>
+<a href="/develop/book/demo" target="_parent">DEMO示例</a>
+<br/>
+<br/>
+
+                            <div class="gb-markdown book-page-inner">
+                                <h1 id="&#x8BED;&#x97F3;&#x56DE;&#x62E8;demo-&#x793A;&#x4F8B;">&#x8BED;&#x97F3;&#x56DE;&#x62E8;DEMO &#x793A;&#x4F8B;</h1>
+<!-- toc -->
+<!-- toc stop -->
+<p>&#x8BED;&#x97F3;&#x56DE;&#x62E8;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;&#x5F00;&#x53D1;&#x8005;&#x8C03;&#x7528;&#x8BED;&#x97F3;&#x56DE;&#x62E8;&#x63A5;&#x53E3;&#xFF0C;&#x9996;&#x5148;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x88AB;&#x53EB;&#x65B9;&#x53D1;&#x8D77;&#x547C;&#x53EB;&#xFF1B;&#x5728;&#x7B2C;&#x4E00;&#x65B9;&#x63A5;&#x542C;&#x540E;&#xFF0C;&#x5411;&#x4E8C;&#x65B9;&#x653E;&#x53D1;&#x8D77;&#x547C;&#x53EB;&#xFF1B;&#x7B2C;&#x4E8C;&#x65B9;&#x63A5;&#x542C;&#x540E;&#xFF0C;&#x53CC;&#x65B9;&#x901A;&#x8BDD;&#x3002;&#x671F;&#x95F4;&#x4EFB;&#x4F55;&#x4E00;&#x65B9;&#x6302;&#x673A;&#xFF0C;&#x5C31;&#x7ED3;&#x675F;&#x8BED;&#x97F3;&#x56DE;&#x62E8;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x88AB;&#x53EB;&#x7684;&#x53CC;&#x65B9;&#x4E0D;&#x80FD;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x53F7;&#x7801;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;&#x547C;&#x53EB;&#x53F7;&#x7801;1&#xFF1A;188xxxxxxxx&#xFF1B;&#x53F7;&#x7801;2:189xxxxxxxx&#x3002;</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String url = <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//&#x63A5;&#x53E3;API</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String certId = <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//&#x9274;&#x6743;&#x8D26;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String secretKey = <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//&#x5BC6;&#x94A5;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String appId = <span class="hljs-string">&quot;&quot;</span>;<span class="hljs-comment">//&#x5E94;&#x7528;&#x6807;&#x8BC6;</span>
+    <span class="hljs-comment">/**
+     * &#x8BED;&#x97F3;&#x56DE;&#x62E8;
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">callBack</span><span class="hljs-params">()</span></span>{
+        SapiSdk sapiSdk = <span class="hljs-keyword">new</span> SapiSdk(url,certId,secretKey);
+        String from1 = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x65B9;&#x4E3B;&#x53EB;&#x53F7;&#x7801; &#x9009;&#x586B; &#x5982;&#x6709;&#x7ED1;&#x5B9A;IVR&#x53F7;&#x7801;&#xFF0C;&#x53EF;&#x586B;&#x7ED1;&#x5B9A;&#x53F7;&#x7801;,&#x5426;&#x5219;&#x4E3A;&#x7A7A;</span>
+        String to1 = <span class="hljs-string">&quot;188xxxxxxxx&quot;</span>; <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x65B9;&#x88AB;&#x53EB;&#x53F7;&#x7801; &#x5FC5;&#x586B;</span>
+        String from2 = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x65B9;&#x4E3B;&#x53EB;&#x53F7;&#x7801; &#x9009;&#x586B; &#x5982;&#x6709;&#x7ED1;&#x5B9A;IVR&#x53F7;&#x7801;&#xFF0C;&#x53EF;&#x586B;&#x7ED1;&#x5B9A;&#x53F7;&#x7801;,&#x5426;&#x5219;&#x4E3A;&#x7A7A;</span>
+        String to2 = <span class="hljs-string">&quot;189xxxxxxxx&quot;</span>; <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x65B9;&#x88AB;&#x53EB;&#x53F7;&#x7801; &#x5FC5;&#x586B;</span>
+        String ringTone = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x94C3;&#x97F3; &#x9009;&#x586B;</span>
+        Integer ringToneMode = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x94C3;&#x97F3;&#x64AD;&#x653E;&#x6A21;&#x5F0F; 0&#xFF1A;&#x6536;&#x5230;&#x5BF9;&#x7AEF;&#x56DE;&#x94C3;&#x540E;&#x5F00;&#x59CB;&#x64AD;&#x653E; 1&#xFF1A;&#x62E8;&#x53F7;&#x65F6;&#x5373;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#xFF0C;&#x6536;&#x5230;&#x5BF9;&#x7AEF;&#x56DE;&#x94C3;&#x540E;&#x505C;&#x6B62;&#x64AD;&#x653E; 2&#xFF1A;&#x62E8;&#x53F7;&#x65F6;&#x5373;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#xFF0C;&#x5BF9;&#x7AEF;&#x63A5;&#x542C;&#x6216;&#x8005;&#x6302;&#x673A;&#x540E;&#x505C;&#x6B62;&#x64AD;&#x653E; &#x9009;&#x586B;</span>
+        Integer maxDialDuration = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x6700;&#x5927;&#x62E8;&#x53F7;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#xFF08;&#x79D2;&#xFF09;</span>
+        Integer maxCallDuration = <span class="hljs-number">50</span>; <span class="hljs-comment">// &#x6700;&#x5927;&#x63A5;&#x901A;&#x65F6;&#x95F4;&#xFF08;&#x79D2;&#xFF09; &#x5FC5;&#x586B;</span>
+        Boolean recording = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x662F;&#x5426;&#x5F55;&#x97F3; &#x9009;&#x586B;</span>
+        Integer recordMode = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x5F55;&#x97F3;&#x6A21;&#x5F0F;&#xFF1A; 0: &#x53CC;&#x5411;&#x63A5;&#x901A;&#x540E;&#x5F55;&#x97F3; 1&#xFF1A;&#x5F00;&#x59CB;&#x547C;&#x53EB;&#x7B2C;&#x4E00;&#x65B9;&#x65F6;&#x542F;&#x52A8;&#x5F55;&#x97F3; 2: &#x5F00;&#x59CB;&#x547C;&#x53EB;&#x7B2C;&#x4E8C;&#x65B9;&#x65F6;&#x542F;&#x52A8;&#x5F55;&#x97F3; &#x9009;&#x586B;</span>
+        String userData = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x7528;&#x6237;&#x6570;&#x636E; &#x9009;&#x586B;</span>
+        <span class="hljs-keyword">try</span> {
+            String result = sapiSdk.duoCallback(appId,from1,to1,from2,to2,ringTone,ringToneMode,maxDialDuration,maxCallDuration,recording,recordMode,userData);
+            System.out.println(<span class="hljs-string">&quot;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#xFF1A;&quot;</span>+result);
+            <span class="hljs-comment">//&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#xFF1A;{&quot;code&quot;:&quot;000000&quot;,&quot;msg&quot;:&quot;&#x8BF7;&#x6C42;&#x6210;&#x529F;&quot;,&quot;data&quot;:{&quot;callId&quot;:&quot;8a2d9fed5afa3b27015afa40e1290000&quot;,&quot;user_data&quot;:null}}</span>
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            e.printStackTrace();
+        }
+    }
+</code></pre>
+
+                            </div>
+                            
+<hr>
+<div class="btn-group btn-group-justified">
+	
+	<a class="btn" href="1-call.html"><b>上一页:</b> 1 - 语音通知DEMO</a>
+	
+	
+	<a class="btn" href="3-verify.html"><b>下一页:</b> 3 - 语音验证码DEMO</a>
+	
+</div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="gb-page-footer">
+	    
+<div class="footer">
+	<!--<div class="link">-->
+		<!--<div class="container">-->
+			<!--<div class="item"><h4>产品</h4>-->
+				<!--<p class="item-prodcut-link"><a href="/product/callto" class="">语音通知</a> <a href="/product/callback" class="">语音回拨</a>-->
+					<!--<a href="/product/callmeeting" class="">语音会议</a> <br> <a href="/product/record" class="">通话录音</a> <a-->
+						<!--href="/product/voicecode" class="">语音验证码</a> <a href="/product/ivr" class="">自定义IVR</a></p></div>-->
+			<!--<div class="item"><h4>关于</h4>-->
+				<!--<p><a href="/about-us" class="">关于我们</a></p></div>-->
+			<!--<div class="item"><h4>联系</h4>-->
+				<!--<ul>-->
+					<!--<li>电话咨询: 400-002-0048</li>-->
+					<!--<li>合作邮箱: guestservice@yunhuni.com</li>-->
+				<!--</ul>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+    <div class="icp" style="height:100px;font-size:12px;line-height: 100px;">Copyright 2016 壹耘 粤ICP备16048993号 All Rights Reserved 广州流水行云科技有限公司</div>
+
+</div>
+
+    </footer>
+</div>
+
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"title":"2 - 语音回拨DEMO","level":"1.2.2","depth":2,"next":{"title":"3 - 语音验证码DEMO","level":"1.2.3","depth":2,"path":"DEMO/3-verify.md","ref":"DEMO/3-verify.md","articles":[]},"previous":{"title":"1 - 语音通知DEMO","level":"1.2.1","depth":2,"path":"DEMO/1-call.md","ref":"DEMO/1-call.md","articles":[]},"dir":"ltr"},"config":{"plugins":["docs-theme@git+https://github.com/liushuixingyun/gitbook-plugin-docs-theme.git","-sharing","toc","codetabs","theme-api","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"toc":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://github.com/liushuixingyun/yunhuni-platform-docs"},"theme-api":{"languages":[{"lang":"java","name":"JAVA","default":true},{"lang":"php","name":"PHP"},{"lang":"node","name":"Node.js"}],"split":true,"theme":"dark"},"docs-theme":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ONEYUN Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"1.0.0"},"title":"壹耘 Java 示例程序","language":"zh","gitbook":"3.2.2"},"file":{"path":"DEMO/2-callback.md","mtime":"2017-03-23T11:07:55.357Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-23T13:47:42.314Z"},"basePath":"..","book":{"language":""}});
+})();
+</script>
+
+        
+    </body>
+</html>
+
